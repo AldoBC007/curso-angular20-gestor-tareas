@@ -1,31 +1,36 @@
 <main>
-  <h1>{{ title }}</h1>
-  <p class="contador">Pendientes: {{ pendientes() }}</p>
-
-  <div class="nueva-tarea">
-    <input
-      type="text"
-      #inputTarea
-      placeholder="Nueva Tarea"
-      (keyup.enter)="agregar(inputTarea.value); inputTarea.value = ''"
-    />
-
-    <button (click)="agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
-  </div>
-
-  <ul>
-    @for (tarea of tareas(); track tarea.id) {
-      <li (click)="toggle(tarea.id)" [class.hecha]="tarea.completada">
-        {{ tarea.titulo }}
-        @if (tarea.completada) {
-          <span>✅</span>
-        }
-        <button class="eliminar" (click)="eliminar(tarea.id); $event.stopPropagation()">🗑️</button>
-      </li>
-    } @empty {
-      <li>No hay tareas. Agrega una!!</li>
-    }
-  </ul>
+  <h1>{{title}}</h1>
 </main>
+
+<div class="NuevaTarea">
+  <input
+    type="text"
+    #inputTarea
+    placeholder="Nueva Tarea"
+    (keyup.enter)="agregar(inputTarea.value); inputTarea.value=''"
+  />
+
+  <button
+    (click)="agregar(inputTarea.value); inputTarea.value=''"
+    style="background-color: blue; color: white"
+  >
+    Agregar
+  </button>
+</div>
+
+<ul>
+  @for (tarea of tareas(); track tarea.id){
+  <li (click)="toggle(tarea.id)" [class.hecha]="tarea.completada">
+    {{tarea.titulo}} @if(tarea.completada){
+    <span>OK</span>
+    }
+    <button (click)="eliminar(tarea.id)" style="background-color: red; color: white">
+      Eliminar
+    </button>
+  </li>
+  }@empty{
+  <li>No Hay Tareas</li>
+  }
+</ul>
 
 <router-outlet />
