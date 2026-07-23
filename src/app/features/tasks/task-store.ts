@@ -53,4 +53,9 @@ export class TaskStore {
       { id: 3, titulo: 'Dominar signals', completada: true },
     ];
   }
+
+  //Tarea 2
+  limpiarCompletadas(): void {
+    this.tareas.update((tareas) => tareas.filter((tarea) => !tarea.completada));
+  }
 }
