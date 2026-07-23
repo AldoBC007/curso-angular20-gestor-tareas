@@ -1,36 +1,35 @@
 <main>
-  <h1>{{title}}</h1>
-</main>
+  <h1>{{ title }}</h1>
+  <p class="contador">
+    <span>Pendientes: {{ store.pendientes() }}</span> &nbsp;
+    <span>Completadas: {{ store.terminadas() }}</span>
+  </p>
 
-<div class="NuevaTarea">
-  <input
-    type="text"
-    #inputTarea
-    placeholder="Nueva Tarea"
-    (keyup.enter)="agregar(inputTarea.value); inputTarea.value=''"
-  />
+  <div class="nueva-tarea">
+    <input
+      type="text"
+      #inputTarea
+      placeholder="Nueva Tarea"
+      (keyup.enter)="store.agregar(inputTarea.value); inputTarea.value = ''"
+    />
 
-  <button
-    (click)="agregar(inputTarea.value); inputTarea.value=''"
-    style="background-color: blue; color: white"
-  >
-    Agregar
-  </button>
-</div>
+    <button (click)="store.agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
+  </div>
 
-<ul>
-  @for (tarea of tareas(); track tarea.id){
-  <li (click)="toggle(tarea.id)" [class.hecha]="tarea.completada">
-    {{tarea.titulo}} @if(tarea.completada){
-    <span>OK</span>
+  <ul>
+    @for (tarea of store.tareas(); track tarea.id) {
+    <li (click)="store.toggle(tarea.id)" [class.hecha]="tarea.completada">
+      {{ tarea.titulo }} @if (tarea.completada) {
+      <span></span>
+      }
+      <button class="eliminar" (click)="store.eliminar(tarea.id); $event.stopPropagation()">
+        Eliminar
+      </button>
+    </li>
+    } @empty {
+    <li>No hay tareas. Agrega una!!</li>
     }
-    <button (click)="eliminar(tarea.id)" style="background-color: red; color: white">
-      Eliminar
-    </button>
-  </li>
-  }@empty{
-  <li>No Hay Tareas</li>
-  }
-</ul>
+  </ul>
+</main>
 
 <router-outlet />
