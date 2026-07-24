@@ -60,5 +60,5 @@ export class TaskStore {
   }
 
   //Bonus Tarea 2
-  tareaCompletada = computed(() => this.tareas().some((tarea) => tarea.completada));
+  //tareaCompletada = computed(() => this.tareas().some((tarea) => tarea.completada));
 }
