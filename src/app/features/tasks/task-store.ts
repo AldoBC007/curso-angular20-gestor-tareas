@@ -58,4 +58,7 @@ export class TaskStore {
   limpiarCompletadas(): void {
     this.tareas.update((tareas) => tareas.filter((tarea) => !tarea.completada));
   }
+
+  //Bonus Tarea 2
+  tareaCompletada = computed(() => this.tareas().some((tarea) => tarea.completada));
 }
