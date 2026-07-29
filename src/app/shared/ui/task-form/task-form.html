@@ -1,1 +1,9 @@
-
+<!-- Tarea 3 -->
+<input
+  type="text"
+  #inputTarea
+  placeholder="Nueva Tarea"
+  (keyup.enter)="add.emit(inputTarea.value); inputTarea.value = ''"
+/>
+<!-- (keyup.enter)="add.emit(task().titulo); inputTarea.value = ''" -->
+<button (click)="add.emit(inputTarea.value); inputTarea.value = ''">Agregar</button>
