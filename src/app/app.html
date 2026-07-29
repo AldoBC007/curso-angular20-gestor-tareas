@@ -6,14 +6,8 @@
   </p>
 
   <div class="nueva-tarea">
-    <input
-      type="text"
-      #inputTarea
-      placeholder="Nueva Tarea"
-      (keyup.enter)="store.agregar(inputTarea.value); inputTarea.value = ''"
-    />
-
-    <button (click)="store.agregar(inputTarea.value); inputTarea.value = ''">Agregar</button>
+   <!-- Tarea 3 -->
+    <app-task-form (add)="store.agregar($event)" />
   </div>
 
   <ul>
