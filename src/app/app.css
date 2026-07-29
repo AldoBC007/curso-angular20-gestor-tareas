@@ -6,11 +6,10 @@ main {
 
 h1 {
   margin-bottom: 0.25rem;
-  text-align: center;
 }
 
 .contador {
-  color: rgb(16, 97, 190);
+  color: #666;
   margin-top: 0;
 }
 
@@ -31,27 +30,27 @@ h1 {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 6px;
-  background: green;
-  color: white;
-  cursor: pointer;
-}
-
-.eliminar {
-  padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 6px;
   background: #d81b60;
   color: white;
   cursor: pointer;
 }
 
-.limpiar {
+.cargar {
   padding: 0.5rem 1rem;
-  border: none;
+  border: 1px solid #d81b60;
   border-radius: 6px;
-  background: #d8571b;
-  color: white;
+  background: transparent;
+  color: #d81b60;
   cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.estado {
+  color: #666;
+}
+
+.error {
+  color: #c62828;
 }
 
 ul {
@@ -59,27 +58,8 @@ ul {
   padding: 0;
 }
 
-li {
-  padding: 0.6rem 0.75rem;
-  border: 1px solid #eee;
-  border-radius: 6px;
-  margin-bottom: 0.4rem;
-  cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-}
-
-li:hover {
-  background: #fafafa;
-}
-
-.hecha {
-  text-decoration: line-through;
-  opacity: 0.6;
-}
-
 .vacio {
-  cursor: default;
+  padding: 0.6rem 0.75rem;
   color: #999;
   text-align: center;
 }
