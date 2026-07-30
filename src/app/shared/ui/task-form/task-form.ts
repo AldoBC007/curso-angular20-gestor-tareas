@@ -10,5 +10,5 @@ import { Task } from '../../../features/tasks/task';
 export class TaskForm {
   //task = input.required<Task>();
   //Tarea 3
-  add = output<string>();
+  agregado = output<string>();
 }
