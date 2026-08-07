@@ -2,6 +2,7 @@
   {{ task().titulo }} @if (task().completada) {
   <span></span>
   }
+  <a [routerLink]="['/tarea', task().id]" (click)="$event..stopPropagation()">🔍</a>
   <button class="eliminar" (click)="removed.emit(task().id); $event.stopPropagation()">
     Eliminar
   </button>
