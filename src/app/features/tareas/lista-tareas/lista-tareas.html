@@ -1,1 +1,23 @@
+<p class="contador">
+  <span>Pendientes: {{ store.pendientes() }}</span> &nbsp;
+  <span>Completadas: {{ store.terminadas() }}</span>
+</p>
 
+<div class="nueva-tarea">
+  <!-- Tarea 3 -->
+  <app-task-form (add)="store.agregar($event)" />
+</div>
+
+<ul>
+  @for (tarea of store.tareas(); track tarea.id) {
+  <app-task-item
+    [task]="tarea"
+    (toggle)="store.toggle($event)"
+    (removed)="store.eliminar($event)"
+  />
+  } @empty {
+  <li>No hay tareas. Agrega una!!</li>
+  }
+</ul>
+<button class="limpiar" (click)="store.limpiarCompletadas()">Limpiar Tareas Completadas</button>
+<!-- [disabled]="store.tareaCompletada()" -->
