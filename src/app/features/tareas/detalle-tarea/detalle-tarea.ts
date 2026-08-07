@@ -1,9 +1,10 @@
 import { Component, computed, inject, input } from '@angular/core';
 import { TaskStore } from '../../tasks/task-store';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-tarea',
-  imports: [],
+  imports: [RouterLink],
   templateUrl: './detalle-tarea.html',
   styleUrl: './detalle-tarea.css',
 })
