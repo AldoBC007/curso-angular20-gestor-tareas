@@ -8,6 +8,6 @@ export const routes: Routes = [
   },
   {
     path: 'tarea/:id',
-    loadComponent: () => import('./features/tareas/detalle-tarea').then((m) => m.DetalleTarea),
-  },
+    loadComponent: () => import('./features/tareas/detalle-tarea/detalle-tarea').then((m) => m.DetalleTarea),
+  }
 ];
