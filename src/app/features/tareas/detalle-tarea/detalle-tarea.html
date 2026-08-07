@@ -1,1 +1,9 @@
+<a routerLink='/' >Volver a la lista </a>
 
+@if (tareas(); as t){
+  <h2> {{t.titulo}} </h2>
+  <p> Estado: {{t.completada ? 'Completada': 'Pendiente'}} </p>
+  <p class="meta">Id Interno: {{t.id}} </p>
+} @else{
+  <p>No existe tarea con el id: {{id()}}</p>
+}
