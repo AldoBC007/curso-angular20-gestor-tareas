@@ -1,6 +1,6 @@
 <a routerLink='/' >Volver a la lista </a>
 
-@if (tareas(); as t){
+@if (tarea(); as t){
   <h2> {{t.titulo}} </h2>
   <p> Estado: {{t.completada ? 'Completada': 'Pendiente'}} </p>
   <p class="meta">Id Interno: {{t.id}} </p>
